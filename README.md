@@ -20,6 +20,8 @@ With some basic JavaScript principles in hand, we can now expand our skills out 
 * [ ] Add your team lead as a reviewer on the pull-request
 * [ ] Your team lead will count the project as complete by merging the branch back into master.
 
+small change for intital commit
+
 ## Task 1: Higher Order Functions and Callbacks
 
 This task focuses on getting practice with higher order functions and callback functions by giving you an array of values and instructions on what to do with that array.
