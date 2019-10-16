@@ -84,9 +84,12 @@ console.log(multiplyNums(5, 4, placeholderForCB));
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  // return cb(list.inclues('pencil'))
   return cb(list.includes(item));
 }
-console.log(contains)
+contains('Pencil', items, (isItemIncludedInList) => {
+  console.log(isItemIncludedInList)
+});
 
 
 /* STRETCH PROBLEM */

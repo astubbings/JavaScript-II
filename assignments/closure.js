@@ -4,6 +4,27 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+function country(countryName) {
+  const lang1 = 'English';
+  const lang2 = 'Hillbilly';
+  console.log(`${countryName} is on the north american continent south of Canada and north of Mexico`);
+
+  function state(stateName) {
+    const sport = 'skiing'
+    console.log(`The most popular sport in ${stateName} is ${sport}`);
+
+    function capital(cityName) {
+      const food = 'burgers'
+      console.log(`${cityName} is the capital of ${countryName} and the offical languages are ${lang1} and ${lang2} and the national food is ${food}.  The state sport of ${stateName} is ${sport}`);
+
+    }// this closes the capital
+    capital('Washington DC');
+
+  }// this closes the province
+  state('Utah');
+
+}// this closes the country 
+country('United States');
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
