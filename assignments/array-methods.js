@@ -75,9 +75,8 @@ console.log(firstNamesAllCaps);
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue. We need a filtered version of the runners array, containing only those runners with large sized shirts so they can choose a different size. This will be an array of objects.
-let runnersLargeSizeShirt = [];
-runners.filter(function(items) {
-  return runnersLargeSizeShirt.push(`${items.runners} ${items.shirt_size}`);
+let runnersLargeSizeShirt = runners.filter(function(items) {
+  return items.shirt_size === 'L';
 });
 console.log(runnersLargeSizeShirt);
 
@@ -96,7 +95,27 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// Just want everyones first name and last initial in the new array lastNameInitial
+let lastNameInitial = [];
+runners.map(runner => {
+  lastNameInitial.push(`${runner.first_name} ${runner.last_name.substr(0,1)}`)
+})
+
+console.log(lastNameInitial);
 
 // Problem 2
+// I want a list of each person (each object) in a new array called runnerSmallShirtReplacement so we can buy them a new shirt
+let runnersSmallShirtReplacement = runners.filter(function(items) {
+  return items.shirt_size === 'S';
+});
+console.log(runnersSmallShirtReplacement);
 
 // Problem 3
+// using the above array we will add up donations from everyone with a small shirt so we can lower our tax writeoff because those people had to buy new shirts with their own money
+let smallShirtDonationReturn = 0;
+
+smallShirtDonationReturn = runnersSmallShirtReplacement.reduce(function(accumulator, currentValue){
+    return accumulator + currentValue.donation;
+}, 0);
+
+console.log(`We shall reduce our tax burden by $`+smallShirtDonationReturn);
